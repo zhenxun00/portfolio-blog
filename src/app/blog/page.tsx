@@ -1,12 +1,14 @@
 "use client";
 
+import Link from "next/link";
+
 const posts = [
   {
     slug: "portfolio-nextjs",
     title: "Building a Modern Portfolio with Next.js 14",
     date: "2026-08-15",
     category: "Tutorial",
-    excerpt: "Learn how to create a stunning developer portfolio using the latest Next.js features including App Router, Server Components, and more.",
+    excerpt: "Learn how to create a stunning developer portfolio using the latest Next.js features.",
     readTime: "8 min read",
   },
   {
@@ -14,7 +16,7 @@ const posts = [
     title: "The Future of AI in Web Development",
     date: "2026-08-10",
     category: "AI",
-    excerpt: "Exploring how AI tools are transforming the way we build web applications, from code generation to testing.",
+    excerpt: "Exploring how AI tools are transforming the way we build web applications.",
     readTime: "6 min read",
   },
   {
@@ -22,7 +24,7 @@ const posts = [
     title: "Mastering TypeScript Generics",
     date: "2026-08-05",
     category: "TypeScript",
-    excerpt: "A deep dive into TypeScript generics with practical examples and patterns for writing reusable code.",
+    excerpt: "A deep dive into TypeScript generics with practical examples and patterns.",
     readTime: "10 min read",
   },
   {
@@ -30,24 +32,27 @@ const posts = [
     title: "Optimizing React Performance",
     date: "2026-07-28",
     category: "React",
-    excerpt: "Tips and tricks for improving your React application's performance, from memoization to code splitting.",
+    excerpt: "Tips and tricks for improving your React application's performance.",
     readTime: "7 min read",
+    comingSoon: true,
   },
   {
     slug: "open-source-guide",
     title: "Getting Started with Open Source",
     date: "2026-07-20",
     category: "Community",
-    excerpt: "A beginner's guide to contributing to open source projects and building your developer reputation.",
+    excerpt: "A beginner's guide to contributing to open source projects.",
     readTime: "5 min read",
+    comingSoon: true,
   },
   {
     slug: "tailwind-tips",
     title: "Advanced Tailwind CSS Techniques",
     date: "2026-07-15",
     category: "CSS",
-    excerpt: "Take your Tailwind CSS skills to the next level with advanced patterns and custom configurations.",
+    excerpt: "Take your Tailwind CSS skills to the next level.",
     readTime: "9 min read",
+    comingSoon: true,
   },
 ];
 
@@ -55,11 +60,11 @@ const categories = ["All", "Tutorial", "AI", "TypeScript", "React", "Community",
 
 export default function BlogPage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-16">
+    <div className="max-w-4xl mx-auto px-6 py-16">
       {/* Header */}
       <div className="mb-12">
         <h1 className="text-4xl font-bold mb-4">Blog</h1>
-        <p className="text-lg text-muted-foreground max-w-2xl">
+        <p className="text-lg text-muted-foreground">
           Thoughts on development, AI, and the latest in web technologies.
         </p>
       </div>
@@ -81,29 +86,32 @@ export default function BlogPage() {
       </div>
 
       {/* Posts Grid */}
-      <div className="grid md:grid-cols-2 gap-6">
-        {posts.map((post, i) => (
-          <article
+      <div className="space-y-4">
+        {posts.map((post) => (
+          <Link
             key={post.slug}
-            className={`group p-6 rounded-xl border border-border bg-card hover:bg-card-hover hover:border-primary/50 transition-all animate-fade-in delay-${(i + 1) * 100}`}
+            href={post.comingSoon ? "#" : `/blog/${post.slug}`}
+            className={`group block p-6 rounded-xl border border-border bg-card hover:border-primary/50 hover:shadow-lg transition-all ${
+              post.comingSoon ? "opacity-60 cursor-not-allowed" : ""
+            }`}
           >
             <div className="flex items-center gap-4 mb-3">
-              <span className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary font-medium">
+              <span className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary font-medium">
                 {post.category}
               </span>
               <time className="text-sm text-muted-foreground">{post.date}</time>
+              <span className="text-sm text-muted-foreground">{post.readTime}</span>
+              {post.comingSoon && (
+                <span className="text-xs px-2 py-1 rounded-full bg-yellow-500/10 text-yellow-500 font-medium">
+                  Coming Soon
+                </span>
+              )}
             </div>
             <h2 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
               {post.title}
             </h2>
-            <p className="text-muted-foreground mb-4">{post.excerpt}</p>
-            <div className="flex items-center justify-between">
-              <span className="text-sm text-muted-foreground">{post.readTime}</span>
-              <span className="text-sm text-primary group-hover:translate-x-1 transition-transform">
-                Read more →
-              </span>
-            </div>
-          </article>
+            <p className="text-muted-foreground">{post.excerpt}</p>
+          </Link>
         ))}
       </div>
 
