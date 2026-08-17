@@ -2,6 +2,23 @@
 
 const projects = [
   {
+    id: "bds-positioning",
+    title: "BDS Satellite Positioning",
+    description: "北斗卫星导航系统定位实现 - 基于RINEX解析、卫星位置计算、单点定位与连续定位的完整导航定位系统。",
+    features: [
+      "RINEX导航电文解析",
+      "WGS-84坐标系卫星位置计算",
+      "最小二乘法单点定位",
+      "连续定位与轨迹绘制",
+      "GUI可视化界面",
+    ],
+    tags: ["Python", "NumPy", "Pandas", "Matplotlib", "卫星导航"],
+    github: "https://github.com/zhenxun00/BDS-Positioning",
+    demo: "#",
+    icon: "🛰️",
+    color: "from-cyan-500 to-blue-500",
+  },
+  {
     id: "ai-writing",
     title: "AI Writing Assistant",
     description: "An intelligent writing tool powered by AI that helps you write better content with real-time suggestions, grammar checking, and style conversion.",

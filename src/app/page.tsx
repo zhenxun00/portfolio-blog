@@ -4,6 +4,13 @@ import Link from "next/link";
 
 const featuredProjects = [
   {
+    title: "BDS Satellite Positioning",
+    description: "北斗卫星导航系统定位 - RINEX解析、卫星位置计算、单点定位与连续定位。",
+    tags: ["Python", "卫星导航", "NumPy"],
+    href: "/projects",
+    icon: "🛰️",
+  },
+  {
     title: "AI Writing Assistant",
     description: "Smart writing tool powered by OpenAI with real-time suggestions and style conversion.",
     tags: ["React", "TypeScript", "OpenAI"],
@@ -16,13 +23,6 @@ const featuredProjects = [
     tags: ["React", "D3.js", "GitHub API"],
     href: "/projects",
     icon: "📊",
-  },
-  {
-    title: "Collab Docs",
-    description: "Real-time collaborative document editor with WebSocket synchronization.",
-    tags: ["Next.js", "Socket.io", "Slate.js"],
-    href: "/projects",
-    icon: "📝",
   },
 ];
 
