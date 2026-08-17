@@ -14,13 +14,15 @@ export function Navbar() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-lg">
-      <div className="max-w-3xl mx-auto px-6 h-14 flex items-center justify-between">
-        <Link href="/" className="font-semibold text-sm">
-          Zhenxun
+    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+      <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-2">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white text-sm font-bold">
+            Z
+          </div>
         </Link>
 
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -32,7 +34,7 @@ export function Navbar() {
           ))}
           <button
             onClick={toggleTheme}
-            className="p-1.5 rounded-md hover:bg-muted transition-colors text-muted-foreground hover:text-foreground"
+            className="p-2 rounded-lg hover:bg-muted transition-colors text-muted-foreground hover:text-foreground"
             aria-label="Toggle theme"
           >
             {theme === "dark" ? (
