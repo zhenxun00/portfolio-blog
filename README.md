@@ -2,120 +2,98 @@
 
 A modern, minimalist personal portfolio and blog built with Next.js 14, Tailwind CSS, and TypeScript.
 
-![Portfolio Blog](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38bdf8?style=for-the-badge&logo=tailwindcss)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=next.js)](https://nextjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38bdf8?style=flat-square&logo=tailwindcss)](https://tailwindcss.com)
 
-## ✨ Features
+## Live Demo
 
-- 🎨 **Minimalist Design** - Clean, modern aesthetic inspired by Apple
-- 🌙 **Dark/Light Mode** - Automatic theme switching with system preference
-- 📱 **Fully Responsive** - Works beautifully on all devices
-- ⚡ **Fast Performance** - Optimized with Next.js App Router
-- 🔍 **SEO Optimized** - Built-in metadata and Open Graph support
-- 📝 **Blog Ready** - MDX support for technical articles
-- 🎯 **Project Showcase** - Beautiful project cards with live demos
+🔗 **[https://zhenxun00.github.io/portfolio-blog/](https://zhenxun00.github.io/portfolio-blog/)**
 
-## 🚀 Tech Stack
+## Features
+
+- 🎨 **Modern Design** - Clean, gradient-accented UI with dark mode support
+- 📱 **Responsive** - Works on all devices (mobile, tablet, desktop)
+- 📝 **Blog** - MDX-ready blog with article pages
+- 🚀 **Fast** - Static generation for blazing fast load times
+- 🔍 **SEO Optimized** - Built-in meta tags and Open Graph support
+
+## Pages
+
+| Page | Description |
+|------|-------------|
+| [Home](https://zhenxun00.github.io/portfolio-blog/) | Hero section, featured projects, latest posts |
+| [Projects](https://zhenxun00.github.io/portfolio-blog/projects) | Showcase of all projects |
+| [Blog](https://zhenxun00.github.io/portfolio-blog/blog) | Technical articles and tutorials |
+| [About](https://zhenxun00.github.io/portfolio-blog/about) | Personal bio and skills |
+
+## Tech Stack
 
 - **Framework**: Next.js 14 (App Router)
 - **Styling**: Tailwind CSS
 - **Language**: TypeScript
-- **Animations**: CSS Animations
-- **Icons**: Custom SVG Icons
+- **Deployment**: GitHub Pages
 
-## 📦 Installation
+## Getting Started
 
 ```bash
 # Clone the repository
 git clone https://github.com/zhenxun00/portfolio-blog.git
 
-# Navigate to the project
-cd portfolio-blog
-
 # Install dependencies
+cd portfolio-blog
 npm install
 
-# Run the development server
+# Run development server
 npm run dev
+
+# Open http://localhost:3000
 ```
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 portfolio-blog/
 ├── src/
 │   ├── app/
-│   │   ├── page.tsx          # Home page
-│   │   ├── layout.tsx        # Root layout
-│   │   ├── globals.css       # Global styles
+│   │   ├── page.tsx              # Home page
+│   │   ├── layout.tsx            # Root layout
+│   │   ├── globals.css           # Global styles
 │   │   ├── blog/
-│   │   │   └── page.tsx      # Blog listing
+│   │   │   ├── page.tsx          # Blog listing
+│   │   │   └── [slug]/page.tsx   # Blog post pages
 │   │   ├── projects/
-│   │   │   └── page.tsx      # Projects showcase
+│   │   │   └── page.tsx          # Projects showcase
 │   │   └── about/
-│   │       └── page.tsx      # About page
+│   │       └── page.tsx          # About page
 │   └── components/
-│       ├── Navbar.tsx        # Navigation bar
-│       ├── Footer.tsx        # Footer
-│       └── ThemeProvider.tsx # Theme context
-├── public/                   # Static assets
-├── tailwind.config.ts        # Tailwind configuration
+│       ├── Navbar.tsx            # Navigation bar
+│       ├── Footer.tsx            # Footer
+│       └── ThemeProvider.tsx     # Dark mode provider
 └── package.json
 ```
 
-## 🎨 Customization
+## Customization
 
-### Colors
+1. Edit `src/app/page.tsx` to update home page content
+2. Edit `src/app/projects/page.tsx` to add your projects
+3. Edit `src/app/blog/page.tsx` to add your blog posts
+4. Edit `src/app/about/page.tsx` to update your bio
 
-Edit `src/app/globals.css` to customize the color scheme:
+## Deployment
 
-```css
-:root {
-  --primary: #2563eb;      /* Primary color */
-  --primary-hover: #1d4ed8; /* Primary hover */
-  /* ... */
-}
+Deploy to GitHub Pages:
+
+```bash
+npm run build
 ```
 
-### Content
+The static files will be generated in the `out/` directory.
 
-Update the content in each page file to personalize your portfolio:
+## License
 
-- `src/app/page.tsx` - Home page content
-- `src/app/about/page.tsx` - About me section
-- `src/app/projects/page.tsx` - Project details
-- `src/app/blog/page.tsx` - Blog posts
+MIT
 
-## 📄 Pages
+## Author
 
-| Page | Description |
-|------|-------------|
-| **Home** | Hero section with featured projects and latest posts |
-| **Blog** | Technical articles and tutorials |
-| **Projects** | Showcase of personal projects |
-| **About** | Bio, skills, and experience |
-
-## 🚀 Deployment
-
-Deploy to Vercel with one click:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/zhenxun00/portfolio-blog)
-
-## 📝 License
-
-MIT License - feel free to use this template for your own portfolio!
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to open an issue or submit a PR.
-
-## 📬 Contact
-
-- **GitHub**: [zhenxun00](https://github.com/zhenxun00)
-- **Twitter**: [@zhenxun00](https://twitter.com/zhenxun00)
-- **Email**: hello@zhenxun.dev
-
----
-
-Built with ❤️ using Next.js & Tailwind CSS
+**Zhenxun** - [GitHub](https://github.com/zhenxun00) - [Twitter](https://twitter.com/zhenxun00)
