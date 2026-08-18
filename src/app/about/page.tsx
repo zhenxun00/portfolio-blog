@@ -12,47 +12,54 @@ const contributions = [
 export default function AboutPage() {
   return (
     <div className="max-w-3xl mx-auto px-6 py-16">
-      <h1 className="text-3xl font-bold mb-2">About</h1>
-      <p className="text-muted-foreground mb-10">Who I am and what I do.</p>
+      {/* Header */}
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold mb-4">
+          <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            About Me
+          </span>
+        </h1>
+        <p className="text-muted-foreground">Who I am and what I do.</p>
+      </div>
 
-      <div className="space-y-8 text-muted-foreground">
+      <div className="space-y-8">
         {/* Bio */}
-        <section>
-          <p>
+        <div className="glass rounded-2xl p-8">
+          <p className="text-muted-foreground leading-relaxed">
             I&apos;m Zhenxun, a developer interested in building things with code.
             Currently exploring satellite navigation systems, AI applications,
             and web development.
           </p>
-          <p className="mt-4">
+          <p className="text-muted-foreground leading-relaxed mt-4">
             When I&apos;m not coding, you can find me exploring new technologies,
             contributing to open source projects, or writing technical articles.
           </p>
-        </section>
+        </div>
 
         {/* Tech Stack */}
-        <section>
-          <h2 className="text-lg font-semibold text-foreground mb-3">Tech Stack</h2>
+        <div className="glass rounded-2xl p-8">
+          <h2 className="text-xl font-semibold mb-4">Tech Stack</h2>
           <div className="flex flex-wrap gap-2">
             {["Python", "JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Git", "Docker", "Linux"].map((tech) => (
-              <span key={tech} className="px-3 py-1 rounded-full bg-muted text-sm">
+              <span key={tech} className="px-3 py-1.5 rounded-full bg-white/50 dark:bg-white/10 text-sm font-medium">
                 {tech}
               </span>
             ))}
           </div>
-        </section>
+        </div>
 
         {/* Open Source Contributions */}
-        <section>
-          <h2 className="text-lg font-semibold text-foreground mb-3">Open Source Contributions</h2>
+        <div className="glass rounded-2xl p-8">
+          <h2 className="text-xl font-semibold mb-4">Open Source Contributions</h2>
           <div className="space-y-3">
             {contributions.map((c) => (
-              <div key={c.pr} className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
+              <div key={c.pr} className="flex items-center justify-between p-3 rounded-xl bg-white/30 dark:bg-white/5">
                 <div>
                   <span className="font-medium">{c.project}</span>
-                  <span className="text-sm ml-2">({c.stars} ⭐)</span>
+                  <span className="text-sm text-muted-foreground ml-2">({c.stars} ⭐)</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary">
+                  <span className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary font-medium">
                     {c.type}
                   </span>
                   <span className="text-sm text-muted-foreground">{c.pr}</span>
@@ -60,33 +67,33 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-        </section>
+        </div>
 
         {/* Currently */}
-        <section>
-          <h2 className="text-lg font-semibold text-foreground mb-3">Currently</h2>
-          <ul className="list-disc pl-5 space-y-2">
+        <div className="glass rounded-2xl p-8">
+          <h2 className="text-xl font-semibold mb-4">Currently</h2>
+          <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
             <li>Building satellite navigation tools</li>
             <li>Contributing to open source projects (320k+ stars)</li>
             <li>Writing about web development</li>
           </ul>
-        </section>
+        </div>
 
-        {/* Links */}
-        <section>
-          <h2 className="text-lg font-semibold text-foreground mb-3">Connect</h2>
-          <div className="flex gap-4">
-            <a href="https://github.com/zhenxun00" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+        {/* Connect */}
+        <div className="glass rounded-2xl p-8 text-center">
+          <h2 className="text-xl font-semibold mb-4">Connect</h2>
+          <div className="flex justify-center gap-4">
+            <a href="https://github.com/zhenxun00" target="_blank" rel="noopener noreferrer" className="glass px-4 py-2 rounded-xl text-sm font-medium hover:bg-white/40 transition-all">
               GitHub
             </a>
-            <a href="https://twitter.com/zhenxun00" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+            <a href="https://twitter.com/zhenxun00" target="_blank" rel="noopener noreferrer" className="glass px-4 py-2 rounded-xl text-sm font-medium hover:bg-white/40 transition-all">
               Twitter
             </a>
-            <a href="mailto:hello@zhenxun.dev" className="text-primary hover:underline">
+            <a href="mailto:hello@zhenxun.dev" className="glass px-4 py-2 rounded-xl text-sm font-medium hover:bg-white/40 transition-all">
               Email
             </a>
           </div>
-        </section>
+        </div>
       </div>
     </div>
   );
